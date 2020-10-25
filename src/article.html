@@ -1,37 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% set title = 'Статья' %}
 
+{% extends "includes/footer.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/index.css">
-</head>
+{% block content %}
 
-<body>
-  <neader class="header">
-    <h1 class="header__tittle">Hello world</h1>
-    <div class="header__logo">
-    </div>
-  </neader>
+<main class="main article">
+  <p class="main__info">This is two page. Color font red.</p>
+  <a href="index.html" class="main__link">GO - Page one</a>
+  <p class="main__lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis itaque exercitationem
+    delectus quasi
+    totam rerum.</p>
+</main>
 
-  <main class="main">
-    <p class="main__info">This is two page.</p>
-    <a href="index.html" class="main__link">GO - Page one</a>
-    <p class="main__lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis itaque exercitationem
-      delectus quasi
-      totam rerum.</p>
-  </main>
-
-  <footer class="footer">
-    <ul class="footer__list">
-      <li class="footer__item">Link</li>
-      <li class="footer__item">Link</li>
-      <li class="footer__item">Link</li>
-    </ul>
-  </footer>
-
-</body>
-
-</html>
+{% endblock %}
