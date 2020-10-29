@@ -1,3 +1,6 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
 .main {
   border: 5px dashed blueviolet;
   padding: 20px;
@@ -6,5 +9,33 @@
   color: blue;
 }
 .article {
-  color: brown;
+  color: red;
 }
+.card {
+  max-width: 200px;
+  background-color: #eeeeee;
+  padding: 10px;
+  display: grid;
+  &__img {
+    height: 120px;
+  }
+  &__tittle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  &__description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  &__link {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #c4c4c4;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+  }
+}
+

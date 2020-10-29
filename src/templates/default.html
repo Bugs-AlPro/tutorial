@@ -9,14 +9,16 @@
 </head>
 
 <body>
-  {% block header %}
-  {% endblock %}
+
+  {% include "../includes/header.html" %}
 
   {% block content %}
   {% endblock %}
+  <section class="cards">
+    {% include "../includes/card.html" %}
+  </section>
+  {% include "../includes/footer.html" %}
 
-  {% block footer %}
-  {% endblock %}
 </body>
 
 </html>
