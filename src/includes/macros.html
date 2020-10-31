@@ -1,0 +1,11 @@
+{% macro cardCreate(title='', value='') %}
+<div class="cards__item card">
+  <img src="https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ" alt="картника"
+    class="card__img">
+  <div class="card__tittle">{{ title }}</div>
+  <div class="card__description">Достаточно краткое описание для <b> {{ value }} </b> карточки</div>
+  <a href="#" class="card__link">Подробнее</a>
+</div>
+{% endmacro %}
+
+{{ cardCreate("Первая карточка", "первой") }}
