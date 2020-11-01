@@ -26,11 +26,16 @@
 .article {
   color: red; }
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+
 .card {
   max-width: 200px;
   background-color: #eeeeee;
   padding: 10px;
-  display: grid; }
+  display: grid;
+  color: black; }
   .card__img {
     height: 120px; }
   .card__tittle {
