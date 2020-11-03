@@ -1,8 +1,0 @@
-{% macro cardCreate(tittle='', value='', src='') %}
-<div class="cards__item card">
-  <img src="{{ src }}" alt="картника" class="card__img">
-  <div class="card__tittle">{{ tittle }}</div>
-  <div class="card__description"> {{ value|safe}} </div>
-  <a href="#" class="card__link">Подробнее</a>
-</div>
-{% endmacro %}
