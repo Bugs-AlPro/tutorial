@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var browsersync = require('browser-sync');
 var del = require('del');
 var reload = browsersync.reload;
+var changed = require('gulp-changed');
 
 var path = {
   src: {
@@ -63,15 +64,24 @@ function images() {
     .pipe(reload({ stream: true }));
 };
 
+function changed() {
+  return gulp
+    .src(path.src.images)
+    .pipe(changed(path.build.images))
+    .pipe(gulp.dest(path.build.images));
+};
+
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.styles], styles);
-  gulp.watch([path.watch.img], images)
+  gulp.watch([path.watch.images], images)
 };
+
+
 
 gulp.task('html', html);
 gulp.task('styles', styles);
 gulp.task('img', images);
 
 gulp.task('build', gulp.series(clean, gulp.parallel(html, styles, images)));
-gulp.task('watch', gulp.parallel(watchFiles, browserSync));
+gulp.task('watch', gulp.parallel(watchFiles, browserSync, changed));
