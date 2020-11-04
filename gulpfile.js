@@ -11,17 +11,17 @@ var path = {
   src: {
     html: 'src/*.html',
     styles: 'src/styles/*.scss',
-    img: 'src/img/*.{jpg,JPG,jpeg,png,webp,svg}'
+    images: 'src/img/*.{jpg,JPG,jpeg,png,webp,svg}'
   },
   build: {
     html: 'build/',
     styles: 'build/css/',
-    img: 'build/img/'
+    images: 'build/img/'
   },
   watch: {
     html: 'src/**/*.html',
     styles: 'src/styles/**/*.scss',
-    img: 'src/img/**/*.{jpg,JPG,jpeg,png,webp,svg}'
+    images: 'src/img/**/*.{jpg,JPG,jpeg,png,webp,svg}'
   },
   base: './build'
 };
@@ -56,22 +56,22 @@ function styles() {
     .pipe(reload({ stream: true }));
 };
 
-function img() {
+function images() {
   return gulp
-    .src(path.src.img)
-    .pipe(gulp.dest(path.build.img))
+    .src(path.src.images)
+    .pipe(gulp.dest(path.build.images))
     .pipe(reload({ stream: true }));
 };
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.styles], styles);
-  gulp.watch([path.watch.img], img)
+  gulp.watch([path.watch.img], images)
 };
 
 gulp.task('html', html);
 gulp.task('styles', styles);
-gulp.task('img', img);
+gulp.task('img', images);
 
-gulp.task('build', gulp.series(clean, gulp.parallel(html, styles, img)));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, styles, images)));
 gulp.task('watch', gulp.parallel(watchFiles, browserSync));
