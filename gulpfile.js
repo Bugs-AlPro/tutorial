@@ -60,15 +60,9 @@ function styles() {
 function images() {
   return gulp
     .src(path.src.images)
+    .pipe(changed(path.build.images))
     .pipe(gulp.dest(path.build.images))
     .pipe(reload({ stream: true }));
-};
-
-function changed() {
-  return gulp
-    .src(path.src.images)
-    .pipe(changed(path.build.images))
-    .pipe(gulp.dest(path.build.images));
 };
 
 function watchFiles() {
@@ -77,11 +71,9 @@ function watchFiles() {
   gulp.watch([path.watch.images], images)
 };
 
-
-
 gulp.task('html', html);
 gulp.task('styles', styles);
 gulp.task('img', images);
 
 gulp.task('build', gulp.series(clean, gulp.parallel(html, styles, images)));
-gulp.task('watch', gulp.parallel(watchFiles, browserSync, changed));
+gulp.task('watch', gulp.parallel(watchFiles, browserSync));
