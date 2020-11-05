@@ -8,6 +8,11 @@ var del = require('del');
 var reload = browsersync.reload;
 var changed = require('gulp-changed');
 
+var imagemin = require('gulp-imagemin');
+var webp = require('imagemin-webp');
+var moz = require('imagemin-mozjpeg');
+var optipng = require('imagemin-optipng');
+
 var path = {
   src: {
     html: 'src/*.html',
@@ -61,6 +66,17 @@ function images() {
   return gulp
     .src(path.src.images)
     .pipe(changed(path.build.images))
+    .pipe(imagemin([
+      webp({
+        quality: 80
+      }),
+      moz({
+        quality: 80
+      }),
+      optipng({
+        quality: 80
+      })
+    ]))
     .pipe(gulp.dest(path.build.images))
     .pipe(reload({ stream: true }));
 };
