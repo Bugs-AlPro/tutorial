@@ -9,9 +9,8 @@ var reload = browsersync.reload;
 var changed = require('gulp-changed');
 
 var imagemin = require('gulp-imagemin');
-var webp = require('imagemin-webp');
-var moz = require('imagemin-mozjpeg');
-var optipng = require('imagemin-optipng');
+var webpp = require('gulp-webp');
+
 
 var path = {
   src: {
@@ -67,16 +66,11 @@ function images() {
     .src(path.src.images)
     .pipe(changed(path.build.images))
     .pipe(imagemin([
-      webp({
-        quality: 80
-      }),
-      moz({
-        quality: 80
-      }),
-      optipng({
-        quality: 80
-      })
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
     ]))
+    .pipe(gulp.dest(path.build.images))
+    .pipe(webpp())
     .pipe(gulp.dest(path.build.images))
     .pipe(reload({ stream: true }));
 };
