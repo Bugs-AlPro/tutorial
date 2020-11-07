@@ -6,3 +6,19 @@
   <a href="#" class="card__link">Подробнее</a>
 </div>
 {% endmacro %}
+
+{% macro imageJpeg(classPicture='', name='', classImg='') %}
+<picture class="{{ classPicture }}">
+  <source srcset="img/{{ name }}.webp" type="image/webp">
+  <source srcset="img/{{ name }}.JPG" type="image/jpeg">
+  <img src="img/test.JPG" alt="jpeg-image" class="{{ classImg }}">
+</picture>
+{% endmacro %}
+
+{% macro imagePng(classPicture='', name='', classImg='') %}
+<picture class="{{ classPicture }}">
+  <source srcset="img/{{ name }}.webp" type="image/webp">
+  <source srcset="img/{{ name }}.png" type="image/jpeg">
+  <img src="img/test.png" alt="png-image" class="{{ classImg }}">
+</picture>
+{% endmacro %}
