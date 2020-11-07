@@ -1,24 +1,22 @@
-{% macro cardCreate(tittle='', value='', src='') %}
+{% macro cardCreate(title, value, src) %}
 <div class="cards__item card">
   <img src="{{ src }}" alt="картника" class="card__img">
-  <div class="card__tittle">{{ tittle }}</div>
-  <div class="card__description"> {{ value|safe}} </div>
+  <div class="card__title">{{ title }}</div>
+  <div class="card__description"> {{ value|safe }} </div>
   <a href="#" class="card__link">Подробнее</a>
 </div>
 {% endmacro %}
 
-{% macro imageJpeg(classPicture='', name='', classImg='') %}
+{% macro imageJpeg(classPicture, name, classImg) %}
 <picture class="{{ classPicture }}">
   <source srcset="img/{{ name }}.webp" type="image/webp">
-  <source srcset="img/{{ name }}.JPG" type="image/jpeg">
-  <img src="img/test.JPG" alt="jpeg-image" class="{{ classImg }}">
+  <img src="img/{{ name }}.jpg" alt="jpeg-image" class="{{ classImg }}">
 </picture>
 {% endmacro %}
 
-{% macro imagePng(classPicture='', name='', classImg='') %}
+{% macro imagePng(classPicture, name, classImg) %}
 <picture class="{{ classPicture }}">
   <source srcset="img/{{ name }}.webp" type="image/webp">
-  <source srcset="img/{{ name }}.png" type="image/jpeg">
-  <img src="img/test.png" alt="png-image" class="{{ classImg }}">
+  <img src="img/{{ name }}.png" alt="png-image" class="{{ classImg }}">
 </picture>
 {% endmacro %}

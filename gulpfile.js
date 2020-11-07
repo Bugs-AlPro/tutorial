@@ -9,6 +9,7 @@ var reload = browsersync.reload;
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var webp = require('gulp-webp');
+var clone = require('gulp-clone');
 
 var path = {
   src: {

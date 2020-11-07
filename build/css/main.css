@@ -2,7 +2,7 @@
   background-color: burlywood;
   display: flex;
   justify-content: space-around; }
-  .header__tittle {
+  .header__title {
     border-left: 10px dotted red;
     border-right: 10px dotted red;
     padding: 0px 15px; }
@@ -38,7 +38,7 @@
   color: black; }
   .card__img {
     height: 120px; }
-  .card__tittle {
+  .card__title {
     font-size: 18px;
     font-weight: 700;
     margin-top: 10px; }

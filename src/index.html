@@ -1,6 +1,6 @@
 {% set title = 'Главная' %}
 {% extends "templates/default.html" %}
-{% import "includes/macros.html" as Variable %}
+{% import "includes/macros.html" as variable %}
 {% set cards = [
   {title: "Первая карточка", value: "Достаточно краткое описание для <b> первой </b> карточки",
   src:"https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"},
@@ -22,17 +22,17 @@
     totam rerum.</p>
   <section class="cards">
     {% for card in cards %}
-    {{ Variable.cardCreate(card.title, card.value, card.src) }}
+    {{ variable.cardCreate(card.title, card.value, card.src) }}
     {% endfor %}
   </section>
 
   <section class="image">
     <div class="image__left">
-      {{ Variable.imageJpeg('image__picture', 'test', 'image__test') }}
+      {{ variable.imageJpeg('image__picture', 'test', 'image__test') }}
     </div>
 
     <div class="image__right">
-      {{ Variable.imagePng('image__picture', 'logo', 'image__logo') }}
+      {{ variable.imagePng('image__picture', 'logo', 'image__logo') }}
     </div>
   </section>
 </main>
