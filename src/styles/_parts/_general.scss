@@ -43,4 +43,10 @@
     text-decoration: none;
   }
 }
-
+.image {
+  display: grid;
+  grid-template-columns: 300px auto;
+  &__test {
+    width: 300px;
+  }
+}

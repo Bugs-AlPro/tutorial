@@ -54,6 +54,12 @@
     color: black;
     text-decoration: none; }
 
+.image {
+  display: grid;
+  grid-template-columns: 300px auto; }
+  .image__test {
+    width: 300px; }
+
 .footer {
   background-color: wheat; }
   .footer__list {
