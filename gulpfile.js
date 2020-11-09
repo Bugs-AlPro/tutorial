@@ -10,12 +10,13 @@ var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var webp = require('gulp-webp');
 var clone = require('gulp-clone');
+var sink = clone.sink();
 
 var path = {
   src: {
     html: 'src/*.html',
     styles: 'src/styles/*.scss',
-    images: 'src/img/*.{jpg,JPG,jpeg,png,webp,svg}'
+    images: 'src/img/*.{jpg,jpeg,png,webp,svg}'
   },
   build: {
     html: 'build/',
@@ -25,7 +26,7 @@ var path = {
   watch: {
     html: 'src/**/*.html',
     styles: 'src/styles/**/*.scss',
-    images: 'src/img/**/*.{jpg,JPG,jpeg,png,webp,svg}'
+    images: 'src/img/**/*.{jpg,jpeg,png,webp,svg}'
   },
   base: './build'
 };
@@ -64,12 +65,13 @@ function images() {
   return gulp
     .src(path.src.images)
     .pipe(changed(path.build.images))
+    .pipe(sink)
+    .pipe(webp())
+    .pipe(sink.tap())
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 75, progressive: true }),
       imagemin.optipng({ optimizationLevel: 5 }),
     ]))
-    .pipe(gulp.dest(path.build.images))
-    .pipe(webp())
     .pipe(gulp.dest(path.build.images))
     .pipe(reload({ stream: true }));
 };
