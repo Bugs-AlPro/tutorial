@@ -12,6 +12,7 @@ var webp = require('gulp-webp');
 var clone = require('gulp-clone');
 var sink = clone.sink();
 var svgSprite = require('gulp-svg-sprite');
+var cheerio = require('gulp-cheerio');
 
 var path = {
   src: {
@@ -91,6 +92,13 @@ var svgConfig = {
 function svg() {
   return gulp
     .src(path.src.svg)
+    .pipe(cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      }
+    }))
     .pipe(svgSprite(svgConfig))
     .pipe(gulp.dest(path.build.svg))
     .pipe(reload({ stream: true }));

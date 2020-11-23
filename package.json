@@ -20,5 +20,8 @@
     "gulp-sass": "^4.1.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-webp": "^4.0.1"
+  },
+  "dependencies": {
+    "gulp-cheerio": "^1.0.0"
   }
 }
