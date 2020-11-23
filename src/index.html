@@ -25,14 +25,25 @@
     {{ variable.cardCreate(card.title, card.value, card.src) }}
     {% endfor %}
   </section>
-
+  <p>Вставляем svg - пример 1
+    <svg>
+      <use xlink:href='img/svg/sprite.svg#line'></use>
+    </svg>
+    пример 2 =
+    <svg>
+      <use xlink:href='img/svg/sprite.svg#line-copy'></use>
+    </svg> пример 3 =
+    <svg>
+      <use xlink:href='img/svg/sprite.svg#line-copy-2'></use>
+    </svg>
+  </p>
   <section class="image">
     <div class="image__left">
-      {{ variable.imageJpeg('image__picture', 'test', 'image__test') }}
+      {{ variable.imageJpeg('image__picture', 'test', 'image__test', '') }}
     </div>
 
     <div class="image__right">
-      {{ variable.imagePng('image__picture', 'logo', 'image__logo') }}
+      {{ variable.imagePng('image__picture', 'logo', 'image__logo', 'png-название') }}
     </div>
   </section>
 </main>

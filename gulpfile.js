@@ -11,22 +11,26 @@ var imagemin = require('gulp-imagemin');
 var webp = require('gulp-webp');
 var clone = require('gulp-clone');
 var sink = clone.sink();
+var svgSprite = require('gulp-svg-sprite');
 
 var path = {
   src: {
     html: 'src/*.html',
     styles: 'src/styles/*.scss',
-    images: 'src/img/*.{jpg,jpeg,png,webp,svg}'
+    images: 'src/img/*.{jpg,jpeg,png,webp,svg}',
+    svg: 'src/img/svg/*.svg'
   },
   build: {
     html: 'build/',
     styles: 'build/css/',
-    images: 'build/img/'
+    images: 'build/img/',
+    svg: 'build/img/svg'
   },
   watch: {
     html: 'src/**/*.html',
     styles: 'src/styles/**/*.scss',
-    images: 'src/img/**/*.{jpg,jpeg,png,webp,svg}'
+    images: 'src/img/**/*.{jpg,jpeg,png,webp,svg}',
+    svg: 'src/img/svg/*.svg'
   },
   base: './build'
 };
@@ -76,6 +80,22 @@ function images() {
     .pipe(reload({ stream: true }));
 };
 
+var svgConfig = {
+  mode: {
+    stack: {
+      sprite: "../sprite.svg"
+    }
+  }
+};
+
+function svg() {
+  return gulp
+    .src(path.src.svg)
+    .pipe(svgSprite(svgConfig))
+    .pipe(gulp.dest(path.build.svg))
+    .pipe(reload({ stream: true }));
+};
+
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.styles], styles);
@@ -85,6 +105,7 @@ function watchFiles() {
 gulp.task('html', html);
 gulp.task('styles', styles);
 gulp.task('img', images);
+gulp.task('svg', svg);
 
-gulp.task('build', gulp.series(clean, gulp.parallel(html, styles, images)));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, styles, images, svg)));
 gulp.task('watch', gulp.parallel(watchFiles, browserSync));
