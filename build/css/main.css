@@ -67,6 +67,12 @@
 .svg-icon {
   background-color: chartreuse;
   fill: crimson;
+  stroke-width: 0.5px;
+  stroke: seagreen;
+  stroke-dasharray: 1px;
+  stroke-dashoffset: 1px;
+  stroke-linecap: round;
+  stroke-opacity: 0.8;
   border: 4px solid #00ffea;
   padding: 0;
   margin: 0; }
