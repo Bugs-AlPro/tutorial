@@ -97,7 +97,8 @@ function svg() {
         $('[fill]').removeAttr('fill');
         $('[stroke]').removeAttr('stroke');
         $('[style]').removeAttr('style');
-      }
+      },
+      parserOptions: { xmlMode: true }
     }))
     .pipe(svgSprite(svgConfig))
     .pipe(gulp.dest(path.build.svg))

@@ -21,8 +21,8 @@
 </picture>
 {% endmacro %}
 
-{% macro imageSvg(name) %}
-<svg>
+{% macro imageSvg(name, class) %}
+<svg class="{{ class }}">
   <use xlink:href='img/svg/sprite.svg#{{ name }}'></use>
 </svg>
 {% endmacro %}
