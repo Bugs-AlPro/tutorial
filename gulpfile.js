@@ -99,7 +99,8 @@ function svg() {
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.styles], styles);
-  gulp.watch([path.watch.images], images)
+  gulp.watch([path.watch.images], images);
+  gulp.watch([path.watch.svg], svg)
 };
 
 gulp.task('html', html);

@@ -20,3 +20,9 @@
   <img src="img/{{ name }}.png" alt="{{ alt }}" class="{{ classImg }}">
 </picture>
 {% endmacro %}
+
+{% macro imageSvg(name) %}
+<svg>
+  <use xlink:href='img/svg/sprite.svg#{{ name }}'></use>
+</svg>
+{% endmacro %}

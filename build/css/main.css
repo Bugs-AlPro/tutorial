@@ -60,6 +60,9 @@
   .image__test {
     width: 300px; }
 
+.svg {
+  border: 1px solid blue; }
+
 .footer {
   background-color: wheat; }
   .footer__list {
