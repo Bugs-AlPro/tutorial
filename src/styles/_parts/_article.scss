@@ -1,13 +1,3 @@
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-.main {
-  border: 5px dashed blueviolet;
-  padding: 20px;
-}
-.index {
-  color: blue;
-}
 .article {
   color: red;
 }
@@ -66,4 +56,7 @@
   border: 4px solid rgb(0, 255, 234);
   padding: 0;
   margin: 0;
+}
+.svg-icon-1 {
+  background-color: chartreuse;
 }

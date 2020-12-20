@@ -1,0 +1,88 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+.nav {
+  border-bottom: 1px solid black;
+  &__link {
+    text-decoration: none;
+  }
+}
+.main {
+  border: 20px solid white;
+  display: grid;
+  grid-template-areas:
+  "tittle tittle"
+  "body body"
+  "one two";
+  gap: 20px;
+
+  &__tittle {
+    min-height: 100px;
+    grid-area: tittle;
+    @include media-up(xs) {
+      background-color: rgb(196, 196, 196);
+    }
+    @include media-up(sm) {
+      background-color: rgb(236, 243, 132);
+    }
+    @include media-up(md) {
+      background-color: rgb(43, 255, 0);
+    }
+    @include media-up(lg) {
+      background-color: rgb(0, 255, 242);
+    }
+    @include media-up(xl) {
+      background-color: rgb(0, 26, 255);
+    }
+    @include media-up(xxl) {
+      background-color: rgb(255, 0, 200);
+    }
+  }
+  &__body {
+    min-height: 300px;
+    grid-area: body;
+    @include media-down(xs) {
+      background-color: rgb(151, 139, 73);
+    }
+    @include media-down(sm) {
+      background-color: rgb(120, 146, 60);
+    }
+    @include media-down(md) {
+      background-color: rgb(65, 146, 65);
+    }
+    @include media-down(lg) {
+      background-color: rgb(63, 151, 144);
+    }
+    @include media-down(xl) {
+      background-color: rgb(63, 82, 148);
+    }
+
+  }
+  &__footer-left {
+    min-height: 100px;
+    grid-area: one;
+    @include media-down(lg) {
+      background-color: rgb(63, 151, 144);
+    }
+    @include media-only (lg) {
+      background-color: blue;
+    }
+    @include media-up(xl) {
+      background-color: rgb(0, 255, 242);
+    }
+  }
+  &__footer-right {
+    min-height: 100px;
+    grid-area: two;
+    @include media-down(md) {
+      background-color: rgb(63, 151, 144);
+    }
+    @include media-only (md) {
+      background-color: blue;
+    }
+    @include media-up(lg) {
+      background-color: rgb(0, 255, 242);
+    }
+  }
+}
+
