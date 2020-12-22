@@ -23,79 +23,47 @@
 *, *::after, *::before {
   box-sizing: border-box; }
 
-.nav {
-  border-bottom: 1px solid black; }
-  .nav__link {
-    text-decoration: none; }
-
 .main {
   border: 20px solid white;
   display: grid;
   grid-template-areas: "tittle tittle" "body body" "one two";
   gap: 20px; }
   .main__tittle {
-    min-height: 100px;
+    min-height: 60px;
     grid-area: tittle; }
-    @media (min-width: 300px) {
+    @media (min-width: 1px) {
       .main__tittle {
         background-color: #c4c4c4; } }
-    @media (min-width: 576px) {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
       .main__tittle {
-        background-color: #ecf384; } }
-    @media (min-width: 768px) {
-      .main__tittle {
-        background-color: #2bff00; } }
-    @media (min-width: 992px) {
-      .main__tittle {
-        background-color: #00fff2; } }
-    @media (min-width: 1200px) {
-      .main__tittle {
-        background-color: #001aff; } }
-    @media (min-width: 1400px) {
-      .main__tittle {
-        background-color: #ff00c8; } }
+        background-color: red; } }
   .main__body {
     min-height: 300px;
     grid-area: body; }
-    @media (max-width: 299.98px) {
+    @media (min-width: 1px) {
       .main__body {
-        background-color: #978b49; } }
-    @media (max-width: 575.98px) {
+        background-color: #FF9C9C; } }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
       .main__body {
-        background-color: #78923c; } }
-    @media (max-width: 767.98px) {
-      .main__body {
-        background-color: #419241; } }
-    @media (max-width: 991.98px) {
-      .main__body {
-        background-color: #3f9790; } }
-    @media (max-width: 1199.98px) {
-      .main__body {
-        background-color: #3f5294; } }
+        background-color: red; } }
   .main__footer-left {
-    min-height: 100px;
+    min-height: 60px;
     grid-area: one; }
-    @media (max-width: 991.98px) {
+    @media (min-width: 1px) {
       .main__footer-left {
-        background-color: #3f9790; } }
+        background-color: #92B9D4; } }
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .main__footer-left {
-        background-color: blue; } }
-    @media (min-width: 1200px) {
-      .main__footer-left {
-        background-color: #00fff2; } }
+        background-color: red; } }
   .main__footer-right {
-    min-height: 100px;
+    min-height: 60px;
     grid-area: two; }
-    @media (max-width: 767.98px) {
+    @media (min-width: 1px) {
       .main__footer-right {
-        background-color: #3f9790; } }
-    @media (min-width: 768px) and (max-width: 991.98px) {
+        background-color: #9BC79D; } }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
       .main__footer-right {
-        background-color: blue; } }
-    @media (min-width: 992px) {
-      .main__footer-right {
-        background-color: #00fff2; } }
+        background-color: red; } }
 
 .article {
   color: red; }

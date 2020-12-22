@@ -1,5 +1,9 @@
 @mixin media-up ($point) {
-  @if $point == xs {
+  @if $point == xxs {
+    @media (min-width: $screen-xxs) {
+      @content;
+    }
+  } @else if $point == xs {
     @media (min-width: $screen-xs) {
       @content;
     }
