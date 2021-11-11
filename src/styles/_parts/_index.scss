@@ -1,60 +1,56 @@
-*, *::after, *::before {
-  box-sizing: border-box;
+
+html, body {
+  height: 100%;
 }
-// .nav {
-//   border-bottom: 1px solid black;
-//   &__link {
-//     text-decoration: none;
-//   }
-// }
+body {
+  background-color: var(--bc-base);
+  font-family: sans-serif;
+  margin: 0;
+}
 .main {
-  border: 20px solid white;
+  height: 100%;
   display: grid;
-  grid-template-areas:
-  "tittle tittle"
-  "body body"
-  "one two";
-  gap: 20px;
-
-  &__tittle {
-    min-height: 60px;
-    grid-area: tittle;
-    @include media-up(xxs) {
-      background-color: #c4c4c4;
-    }
-    @include media-only(lg) {
-      background-color: red;
-    }
+  place-content: center;
+  margin: 0;
+}
+.contact {
+  background-color: var(--bc-block);
+  border: 1px solid var(--contrast);
+  box-shadow: 0 0 5px 2px var(--shadow1),  0 0 50px 1px var(--shadow2), 0 0 80px 10px var(--shadow3);
+  aspect-ratio: 16/9;
+  width: 30vw;
+  color: var(--contrast);
+  margin: auto;
+  min-width: 280px;
+  max-width: 350px;
+  display: grid;
+  align-items: center;
+  &__name {
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
   }
-  &__body {
-    min-height: 300px;
-    grid-area: body; 
-    @include media-up(xxs) {
-      background-color: #FF9C9C;
-    }
-    @include media-only(lg) {
-      background-color: red;
-    }
+  &__links {
+    display: flex;
+    justify-content: space-around;
+ 
   }
-  &__footer-left {
-    min-height: 60px;
-    grid-area: one;
-    @include media-up(xxs) {
-      background-color: #92B9D4;
-    }
-    @include media-only(lg) {
-      background-color: red;
-    }
+  &__link {
+    background-color: var(--bc-link);
+    line-height: 1.6em;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: var(--color-link);
+    display: grid;
   }
-  &__footer-right {
-    min-height: 60px;
-    grid-area: two;
-    @include media-up(xxs) {
-      background-color: #9BC79D;
-    }
-    @include media-only(lg) {
-      background-color: red;
-    }
+  &__link:hover,
+  &__link:focus {
+    box-shadow: inset 0 0 2px 1px var(--contrast);
+    color: var(--hover-link);
+  }
+  &__svg {
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
   }
 }
-

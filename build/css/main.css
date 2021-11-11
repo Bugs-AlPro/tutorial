@@ -1,123 +1,47 @@
-.header {
-  background-color: burlywood;
-  display: flex;
-  justify-content: space-around; }
-  .header__title {
-    border-left: 5px dotted red;
-    border-right: 5px dotted red;
-    padding: 0px 15px; }
-  .header__logo {
-    width: 50px;
-    height: 50px;
-    background-color: chartreuse;
-    border-radius: 50%;
-    align-self: center; }
+html, body {
+  height: 100%; }
 
-.footer {
-  background-color: wheat; }
-  .footer__list {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px; }
-
-*, *::after, *::before {
-  box-sizing: border-box; }
-
-.main {
-  border: 20px solid white;
-  display: grid;
-  grid-template-areas: "tittle tittle" "body body" "one two";
-  gap: 20px; }
-  .main__tittle {
-    min-height: 60px;
-    grid-area: tittle; }
-    @media (min-width: 1px) {
-      .main__tittle {
-        background-color: #c4c4c4; } }
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-      .main__tittle {
-        background-color: red; } }
-  .main__body {
-    min-height: 300px;
-    grid-area: body; }
-    @media (min-width: 1px) {
-      .main__body {
-        background-color: #FF9C9C; } }
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-      .main__body {
-        background-color: red; } }
-  .main__footer-left {
-    min-height: 60px;
-    grid-area: one; }
-    @media (min-width: 1px) {
-      .main__footer-left {
-        background-color: #92B9D4; } }
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-      .main__footer-left {
-        background-color: red; } }
-  .main__footer-right {
-    min-height: 60px;
-    grid-area: two; }
-    @media (min-width: 1px) {
-      .main__footer-right {
-        background-color: #9BC79D; } }
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-      .main__footer-right {
-        background-color: red; } }
-
-.article {
-  color: red; }
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
-
-.card {
-  max-width: 200px;
-  background-color: #eeeeee;
-  padding: 10px;
-  display: grid;
-  color: black; }
-  .card__img {
-    height: 120px; }
-  .card__title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 10px; }
-  .card__description {
-    margin-top: 10px;
-    font-size: 14px; }
-  .card__link {
-    margin-top: 20px;
-    padding: 10px;
-    text-align: center;
-    background-color: #c4c4c4;
-    text-transform: uppercase;
-    color: black;
-    text-decoration: none; }
-
-.image {
-  display: grid;
-  grid-template-columns: 300px auto; }
-  .image__test {
-    width: 300px; }
-
-.svg {
-  border: 1px solid blue;
-  background-color: burlywood; }
-
-.svg-icon {
-  background-color: chartreuse;
-  fill: crimson;
-  stroke-width: 0.5px;
-  stroke: seagreen;
-  stroke-dasharray: 1px;
-  stroke-dashoffset: 1px;
-  stroke-linecap: round;
-  stroke-opacity: 0.8;
-  border: 4px solid #00ffea;
-  padding: 0;
+body {
+  background-color: var(--bc-base);
+  font-family: sans-serif;
   margin: 0; }
 
-.svg-icon-1 {
-  background-color: chartreuse; }
+.main {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  margin: 0; }
+
+.contact {
+  background-color: var(--bc-block);
+  border: 1px solid var(--contrast);
+  box-shadow: 0 0 5px 2px var(--shadow1), 0 0 50px 1px var(--shadow2), 0 0 80px 10px var(--shadow3);
+  aspect-ratio: 16/9;
+  width: 30vw;
+  color: var(--contrast);
+  margin: auto;
+  min-width: 280px;
+  max-width: 350px;
+  display: grid;
+  align-items: center; }
+  .contact__name {
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase; }
+  .contact__links {
+    display: flex;
+    justify-content: space-around; }
+  .contact__link {
+    background-color: var(--bc-link);
+    line-height: 1.6em;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: var(--color-link);
+    display: grid; }
+  .contact__link:hover, .contact__link:focus {
+    box-shadow: inset 0 0 2px 1px var(--contrast);
+    color: var(--hover-link); }
+  .contact__svg {
+    fill: currentColor;
+    width: 30px;
+    height: 30px; }
