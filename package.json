@@ -1,27 +1,29 @@
 {
-  "name": "tutorial",
-  "version": "1.0.0",
-  "description": "",
+  "name": "test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
+  "version": "1.0.0",
   "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "del": "^6.0.0",
+    "browser-sync": "^2.27.7",
     "gulp": "^4.0.2",
-    "gulp-changed": "^4.0.2",
+    "gulp-changed": "^4.0.3",
     "gulp-clone": "^2.0.1",
-    "gulp-imagemin": "^7.1.0",
     "gulp-nunjucks": "^5.1.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-webp": "^4.0.1"
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.43.4"
   },
+  "keywords": [],
+  "description": "",
   "dependencies": {
-    "gulp-cheerio": "^1.0.0"
+    "del": "^6.0.0",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-imagemin": "^8.0.0"
   }
 }

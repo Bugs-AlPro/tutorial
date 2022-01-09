@@ -1,47 +1,60 @@
 html, body {
-  height: 100%; }
+  height: 100%;
+}
 
 body {
-  background-color: var(--bc-base);
+  background-color: var(--general);
   font-family: sans-serif;
-  margin: 0; }
+  margin: 0;
+}
 
 .main {
   height: 100%;
   display: grid;
   place-content: center;
-  margin: 0; }
+  margin: 0;
+}
 
 .contact {
-  background-color: var(--bc-block);
-  border: 1px solid var(--contrast);
-  box-shadow: 0 0 5px 2px var(--shadow1), 0 0 50px 1px var(--shadow2), 0 0 80px 10px var(--shadow3);
+  --shadow-color: var(--bc-base);
+  box-shadow: 0px 0.2px 0.3px hsl(var(--shadow-color)/0), 0.1px 1.6px 2.4px hsl(var(--shadow-color)/0.08), 0.1px 2.8px 4.2px hsl(var(--shadow-color)/0.17), 0.2px 4.1px 6.2px hsl(var(--shadow-color)/0.25), 0.3px 5.7px 8.6px hsl(var(--shadow-color)/0.34), 0.4px 7.9px 11.9px hsl(var(--shadow-color)/0.42), 0.5px 11px 16.5px hsl(var(--shadow-color)/0.5), 0.7px 15.1px 22.7px hsl(var(--shadow-color)/0.59);
   aspect-ratio: 16/9;
   width: 30vw;
   color: var(--contrast);
   margin: auto;
-  min-width: 280px;
+  min-width: 290px;
   max-width: 350px;
   display: grid;
-  align-items: center; }
-  .contact__name {
-    text-align: center;
-    font-size: 1.6em;
-    text-transform: uppercase; }
-  .contact__links {
-    display: flex;
-    justify-content: space-around; }
-  .contact__link {
-    background-color: var(--bc-link);
-    line-height: 1.6em;
-    padding: 10px 10px;
-    border-radius: 10px;
-    color: var(--color-link);
-    display: grid; }
-  .contact__link:hover, .contact__link:focus {
-    box-shadow: inset 0 0 2px 1px var(--contrast);
-    color: var(--hover-link); }
-  .contact__svg {
-    fill: currentColor;
-    width: 30px;
-    height: 30px; }
+  align-items: center;
+}
+.contact__title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+.contact__name {
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.contact__links {
+  display: flex;
+  justify-content: space-around;
+}
+.contact__link {
+  background-color: var(--bc-link);
+  line-height: 1.6em;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: var(--color-link);
+  display: grid;
+}
+.contact__link:hover, .contact__link:focus {
+  box-shadow: inset 0 0 2px 1px var(--contrast);
+  color: var(--hover-link);
+}
+.contact__svg {
+  fill: currentColor;
+  width: 30px;
+  height: 30px;
+}
