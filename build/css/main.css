@@ -20,7 +20,6 @@ body {
   --shadow-color: var(--bc-base);
   box-shadow: 0px 0.2px 0.3px hsl(var(--shadow-color)/0), 0.1px 1.6px 2.4px hsl(var(--shadow-color)/0.08), 0.1px 2.8px 4.2px hsl(var(--shadow-color)/0.17), 0.2px 4.1px 6.2px hsl(var(--shadow-color)/0.25), 0.3px 5.7px 8.6px hsl(var(--shadow-color)/0.34), 0.4px 7.9px 11.9px hsl(var(--shadow-color)/0.42), 0.5px 11px 16.5px hsl(var(--shadow-color)/0.5), 0.7px 15.1px 22.7px hsl(var(--shadow-color)/0.59);
   aspect-ratio: 16/9;
-  width: 30vw;
   color: var(--contrast);
   margin: auto;
   display: grid;
@@ -63,7 +62,8 @@ body {
   display: flex;
 }
 .images__example {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .svg {
