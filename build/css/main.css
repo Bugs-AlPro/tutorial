@@ -23,10 +23,9 @@ body {
   width: 30vw;
   color: var(--contrast);
   margin: auto;
-  min-width: 290px;
-  max-width: 350px;
   display: grid;
   align-items: center;
+  padding: 20px;
 }
 .contact__title {
   margin: 0;
