@@ -125,7 +125,8 @@ export const svg = () => {
     .pipe(svgSprite({
       mode: {
         stack: {
-          sprite: "../sprite-black.svg"
+          sprite: "../sprite-black.svg",
+          example: true
         }
       }
     }))
@@ -140,12 +141,12 @@ export const svgcolor = () => {
     .pipe(svgSprite({
       mode: {
         stack: {
-          sprite: "../sprite-color.svg"
-          // example: true
+          sprite: "../sprite-color.svg",
+          example: true
         }
       }
     }))
-    .pipe(gulp.dest(path.build.svg))
+    .pipe(gulp.dest(path.build.svgcolor))
     .pipe(reload({ stream: true }));
 };
 
